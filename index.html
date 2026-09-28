@@ -1,2 +1,298 @@
-<title>Hello</title>
-<h1>Hello</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TopLovka.ru — ТОП сайтов для знакомств 2026 | ТопЛовка.ру</title>
+<meta name="description" content="TopLovka.ru — независимый рейтинг лучших сайтов знакомств! ТопЛовка.ру поможет найти любовь! Топ приложений знакомств.">
+<meta property="og:title" content="TopLovka.ru — ТОП-3 сайтов для знакомств | ТопЛовка.ру">
+<meta property="og:description" content="Лучшие сервисы знакомств по отзывам реальных пользователей.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2024%2024'%20fill='%23ff3d81'%3E%3Cpath%20d='M20.84%204.61a5.5%205.5%200%200%200-7.78%200L12%205.67l-1.06-1.06a5.5%205.5%200%200%200-7.78%207.78l1.06%201.06L12%2021.23l7.78-7.78%201.06-1.06a5.5%205.5%200%200%200%200-7.78z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  html { font-family: 'Manrope', system-ui, sans-serif; scroll-behavior: smooth; }
+  .font-display { font-family: 'Unbounded', 'Manrope', sans-serif; }
+
+  ::selection { background: #ff3d81; color: #fff; }
+
+  /* ---------- Entrance animations ---------- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .anim { opacity: 0; animation: fadeUp .8s cubic-bezier(.2,.8,.2,1) forwards; }
+  .d1 { animation-delay: .05s } .d2 { animation-delay: .15s } .d3 { animation-delay: .28s }
+  .d4 { animation-delay: .42s } .d5 { animation-delay: .56s } .d6 { animation-delay: .7s }
+
+  /* ---------- Floating background hearts ---------- */
+  @keyframes floaty {
+    0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+    50%      { transform: translateY(-22px) rotate(calc(var(--r, 0deg) + 8deg)); }
+  }
+  .float-heart { animation: floaty 7s ease-in-out infinite; }
+
+  /* ---------- Cards ---------- */
+  .offer {
+    transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .4s ease, box-shadow .4s ease, background-color .4s ease;
+  }
+  .offer:hover {
+    transform: translateY(-7px);
+    border-color: rgba(255,255,255,.22);
+    background-color: rgba(255,255,255,.07);
+  }
+  .offer.featured:hover { transform: translateY(-7px) scale(1.01); }
+  @media (min-width: 1024px) {
+    .offer.featured { transform: translateY(-14px) scale(1.045); z-index: 2; }
+    .offer.featured:hover { transform: translateY(-22px) scale(1.055); }
+  }
+
+  /* ---------- Button glow pulse (#1) ---------- */
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,61,129,.45), 0 10px 34px -8px rgba(255,61,129,.65); }
+    50%      { box-shadow: 0 0 0 7px rgba(255,61,129,0), 0 10px 44px -6px rgba(255,61,129,.85); }
+  }
+  .btn-hot { animation: glowPulse 2.2s ease-in-out infinite; transition: transform .25s ease, background-color .25s ease; }
+  .btn-hot:hover { transform: scale(1.035); background-color: #ff5196; }
+  .btn-ghost { transition: transform .25s ease, background-color .25s ease, border-color .25s ease; }
+  .btn-ghost:hover { transform: scale(1.035); background-color: rgba(255,61,129,.14); border-color: rgba(255,61,129,.7); }
+
+  /* ---------- Live dot ---------- */
+  .dot-live { position: relative; }
+  .dot-live::after {
+    content: ''; position: absolute; inset: -4px; border-radius: 999px;
+    border: 1px solid rgba(52,211,153,.6); animation: ping 1.6s cubic-bezier(0,0,.2,1) infinite;
+  }
+  @keyframes ping { 0% { transform: scale(.6); opacity: 1 } 100% { transform: scale(1.6); opacity: 0 } }
+</style>
+</head>
+
+<body class="bg-[#08080d] text-white antialiased min-h-screen overflow-x-hidden">
+
+<!-- ===== Background decor: soft glows + floating hearts ===== -->
+<div class="fixed inset-0 pointer-events-none select-none" aria-hidden="true">
+  <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[560px] h-[560px] rounded-full bg-[#ff3d81] opacity-[0.13] blur-[130px]"></div>
+  <div class="absolute -bottom-52 -right-32 w-[480px] h-[480px] rounded-full bg-[#ff1e4d] opacity-[0.10] blur-[130px]"></div>
+  <div class="absolute -bottom-32 -left-32 w-[380px] h-[380px] rounded-full bg-[#a855f7] opacity-[0.07] blur-[120px]"></div>
+
+  <i data-lucide="heart" class="float-heart absolute top-[16%] left-[7%] w-6 h-6 text-[#ff3d81] opacity-25 fill-[#ff3d81]" style="--r:-14deg; animation-delay:.2s"></i>
+  <i data-lucide="heart" class="float-heart absolute top-[30%] right-[9%] w-8 h-8 text-[#ff3d81] opacity-15 fill-[#ff3d81]" style="--r:12deg; animation-delay:1.4s"></i>
+  <i data-lucide="heart" class="float-heart absolute bottom-[24%] left-[12%] w-5 h-5 text-[#ffb3cd] opacity-20 fill-[#ffb3cd]" style="--r:8deg; animation-delay:2.2s; animation-duration:9s"></i>
+  <i data-lucide="heart" class="float-heart absolute bottom-[14%] right-[16%] w-5 h-5 text-[#ff3d81] opacity-15 fill-[#ff3d81] hidden md:block" style="--r:-10deg; animation-delay:.8s; animation-duration:8s"></i>
+  <i data-lucide="heart" class="float-heart absolute top-[55%] left-[3%] w-4 h-4 text-[#ffb3cd] opacity-15 fill-[#ffb3cd] hidden lg:block" style="--r:16deg; animation-delay:1.9s"></i>
+</div>
+
+<!-- ===== Header: logo ===== -->
+<header class="relative z-10 pt-8 px-4 anim d1">
+  <a href="/" class="flex items-center justify-center gap-3 w-fit mx-auto group">
+    <span class="grid place-items-center w-11 h-11 rounded-2xl bg-[#ff3d81] shadow-[0_10px_30px_-6px_rgba(255,61,129,.6)] rotate-[-6deg] group-hover:rotate-6 transition-transform duration-300">
+      <i data-lucide="heart" class="w-6 h-6 text-white fill-white"></i>
+    </span>
+    <span class="font-display font-bold text-2xl tracking-tight leading-none">
+      TopLovka<span class="text-[#ff3d81]">.ru</span>
+    </span>
+  </a>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="relative z-10 max-w-3xl mx-auto text-center px-4 pt-10 pb-12">
+  <div class="anim d2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-semibold text-white/70 mb-6">
+    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#ff3d81]"></i>
+    Независимый рейтинг · обновлено в 2026
+  </div>
+
+  <h1 class="anim d3 font-display font-extrabold text-[clamp(1.65rem,5.5vw,3.1rem)] leading-[1.15] tracking-tight">
+    ТОП сайтов<br class="sm:hidden"> для <span class="text-[#ff3d81]">знакомств</span>
+  </h1>
+
+  <p class="anim d4 mt-4 text-white/55 text-base md:text-lg font-medium">
+    Лучшие сервисы по оценкам реальных пользователей
+  </p>
+
+  <div class="anim d4 mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-white/60 font-semibold">
+    <span class="inline-flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>Проверенные анкеты</span>
+    <span class="inline-flex items-center gap-2"><i data-lucide="badge-check" class="w-4 h-4 text-emerald-400"></i>Бесплатная регистрация</span>
+    <span class="inline-flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-emerald-400"></i>Миллионы участников</span>
+  </div>
+</section>
+
+<!-- ===== TOP cards ===== -->
+<main class="relative z-10 max-w-6xl mx-auto px-4 pb-6">
+  <div class="grid gap-6 lg:grid-cols-3 lg:gap-7 lg:items-center pt-3">
+
+    <!-- ============ #1 LOVESTA (featured) ============ -->
+    <article class="offer featured anim d3 relative rounded-[1.75rem] border-2 border-[#ff3d81]/50 bg-white/[0.06] backdrop-blur-xl p-7 md:p-8 lg:order-2 shadow-[0_0_90px_-18px_rgba(255,61,129,.45)]">
+      <!-- rank badge -->
+      <span class="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-[#ff3d81] px-4 py-1.5 text-[11px] font-extrabold tracking-widest uppercase shadow-[0_8px_24px_-6px_rgba(255,61,129,.7)]">
+        <i data-lucide="crown" class="w-3.5 h-3.5"></i> №1 · Лучший выбор
+      </span>
+
+      <div class="flex items-start justify-between mt-2">
+        <div>
+          <h2 class="font-display font-bold text-[1.7rem] leading-none">Lovesta</h2>
+          <p class="mt-2 text-sm text-white/55 font-medium">Флирт и серьёзные отношения</p>
+        </div>
+        <span class="grid place-items-center w-12 h-12 rounded-2xl bg-[#ff3d81]/15 border border-[#ff3d81]/30">
+          <i data-lucide="heart-handshake" class="w-6 h-6 text-[#ff3d81]"></i>
+        </span>
+      </div>
+
+      <div class="mt-5 flex items-end gap-3">
+        <span class="font-display font-extrabold text-5xl leading-none text-[#ff3d81]">9.8</span>
+        <div class="pb-1">
+          <div class="flex gap-0.5 text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="mt-1 text-[11px] font-semibold text-white/40">2 314 отзывов</p>
+        </div>
+      </div>
+
+      <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-400/10 border border-emerald-400/20 px-3 py-1 text-xs font-bold text-emerald-400">
+        <span class="dot-live w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span class="js-online" data-online="14521">14 521</span>&nbsp;онлайн сейчас
+      </div>
+
+      <a href="https://dilayto.com/x1VP" target="_blank" rel="nofollow noopener sponsored"
+         class="btn-hot mt-6 flex items-center justify-center gap-2.5 w-full rounded-full bg-[#ff3d81] py-[1.15rem] text-lg font-extrabold tracking-wide text-white">
+        Перейти на сайт <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+      <p class="mt-3 text-center text-xs font-semibold text-white/40 inline-flex items-center gap-1.5 w-full justify-center">
+        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Регистрация бесплатно · 2 минуты
+      </p>
+    </article>
+
+    <!-- ============ #2 LOV.CHAT ============ -->
+    <article class="offer anim d4 relative rounded-[1.75rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl p-7 lg:order-1">
+      <span class="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-slate-200 text-slate-900 px-4 py-1.5 text-[11px] font-extrabold tracking-widest uppercase shadow-[0_8px_24px_-8px_rgba(226,232,240,.5)]">
+        <i data-lucide="medal" class="w-3.5 h-3.5"></i> №2
+      </span>
+
+      <div class="flex items-start justify-between mt-2">
+        <div>
+          <h2 class="font-display font-bold text-[1.45rem] leading-none">Lov.chat</h2>
+          <p class="mt-2 text-sm text-white/55 font-medium">Живое общение в чате</p>
+        </div>
+        <span class="grid place-items-center w-11 h-11 rounded-2xl bg-white/5 border border-white/10">
+          <i data-lucide="message-circle-heart" class="w-5.5 h-5.5 text-slate-300"></i>
+        </span>
+      </div>
+
+      <div class="mt-5 flex items-end gap-3">
+        <span class="font-display font-extrabold text-4xl leading-none text-slate-200">9.4</span>
+        <div class="pb-0.5">
+          <div class="flex gap-0.5 text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star-half" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="mt-1 text-[11px] font-semibold text-white/40">1 562 отзыва</p>
+        </div>
+      </div>
+
+      <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-400/10 border border-emerald-400/20 px-3 py-1 text-xs font-bold text-emerald-400">
+        <span class="dot-live w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span class="js-online" data-online="9302">9 302</span>&nbsp;онлайн сейчас
+      </div>
+
+      <a href="https://dilayto.com/gzd0" target="_blank" rel="nofollow noopener sponsored"
+         class="btn-ghost mt-6 flex items-center justify-center gap-2.5 w-full rounded-full border-2 border-[#ff3d81]/40 py-4 text-base font-extrabold tracking-wide text-[#ff7fae]">
+        Перейти на сайт <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+      <p class="mt-3 text-center text-xs font-semibold text-white/40 inline-flex items-center gap-1.5 w-full justify-center">
+        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Быстрый вход без анкеты
+      </p>
+    </article>
+
+    <!-- ============ #3 RANDEVU.LOVE ============ -->
+    <article class="offer anim d5 relative rounded-[1.75rem] border border-white/10 bg-white/[0.04] backdrop-blur-xl p-7 lg:order-3">
+      <span class="absolute -top-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 rounded-full bg-[#c97e3d] text-black px-4 py-1.5 text-[11px] font-extrabold tracking-widest uppercase shadow-[0_8px_24px_-8px_rgba(201,126,61,.6)]">
+        <i data-lucide="award" class="w-3.5 h-3.5"></i> №3
+      </span>
+
+      <div class="flex items-start justify-between mt-2">
+        <div>
+          <h2 class="font-display font-bold text-[1.45rem] leading-none">Randevu.love</h2>
+          <p class="mt-2 text-sm text-white/55 font-medium">Быстрые свидания рядом</p>
+        </div>
+        <span class="grid place-items-center w-11 h-11 rounded-2xl bg-white/5 border border-white/10">
+          <i data-lucide="map-pin" class="w-5.5 h-5.5 text-[#e8a661]"></i>
+        </span>
+      </div>
+
+      <div class="mt-5 flex items-end gap-3">
+        <span class="font-display font-extrabold text-4xl leading-none text-[#e8a661]">9.1</span>
+        <div class="pb-0.5">
+          <div class="flex gap-0.5 text-amber-400">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+            <i data-lucide="star-half" class="w-4 h-4 fill-amber-400"></i>
+          </div>
+          <p class="mt-1 text-[11px] font-semibold text-white/40">948 отзывов</p>
+        </div>
+      </div>
+
+      <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-400/10 border border-emerald-400/20 px-3 py-1 text-xs font-bold text-emerald-400">
+        <span class="dot-live w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+        <span class="js-online" data-online="6874">6 874</span>&nbsp;онлайн сейчас
+      </div>
+
+      <a href="https://dilayto.com/NGbG" target="_blank" rel="nofollow noopener sponsored"
+         class="btn-ghost mt-6 flex items-center justify-center gap-2.5 w-full rounded-full border-2 border-[#ff3d81]/40 py-4 text-base font-extrabold tracking-wide text-[#ff7fae]">
+        Перейти на сайт <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+      <p class="mt-3 text-center text-xs font-semibold text-white/40 inline-flex items-center gap-1.5 w-full justify-center">
+        <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Поиск людей поблизости
+      </p>
+    </article>
+
+  </div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="relative z-10 max-w-4xl mx-auto px-4 pt-8 pb-10 text-center anim d6">
+  <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 text-xs font-bold text-white/60 mb-4">
+    <i data-lucide="flame" class="w-3.5 h-3.5 text-[#ff3d81]"></i> Только для лиц старше 18 лет
+  </div>
+  <p class="text-xs text-white/30 leading-relaxed">
+    Рейтинг составлен на основе пользовательских оценок и носит информационный характер.
+  </p>
+  <p class="mt-2 text-xs font-semibold text-white/40 inline-flex items-center gap-1.5 justify-center">
+    <i data-lucide="heart" class="w-3 h-3 text-[#ff3d81] fill-[#ff3d81]"></i> © 2026 TopLovka.ru | ТопЛовка.ру — найди свою любовь!
+  </p>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  // Live "online now" counters — subtle jitter for realism
+  const counters = document.querySelectorAll('.js-online');
+  counters.forEach(el => { el.dataset.online = String(parseInt(el.dataset.online, 10)); });
+  setInterval(() => {
+    counters.forEach(el => {
+      const base = parseInt(el.dataset.online, 10);
+      const next = Math.max(500, base + Math.floor(Math.random() * 90 - 44));
+      el.dataset.online = String(next);
+      el.textContent = next.toLocaleString('ru-RU');
+    });
+  }, 2600);
+</script>
+  <!--LiveInternet counter--><script>
+new Image().src = "https://counter.yadro.ru/hit;vse_sayti?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,150))+
+";"+Math.random();</script><!--/LiveInternet-->
+</body>
+</html>
